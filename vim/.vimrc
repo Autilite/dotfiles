@@ -6,6 +6,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -46,6 +47,7 @@ set incsearch           " Incremental search
 set autowrite           " Automatically save before commands like :next and :make and this and that
 "set hidden             " Hide buffers when they are abandoned
 "set mouse=a            " Enable mouse usage (all modes)
+set cursorline          " Highlight screen line of the cursor
 
 " Changes tabs to 4 spaces with smart autoindent
 set number
@@ -55,8 +57,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 "set list               " EOL, trailing spaces, tabs: show them.
-"set lcs=tab:├─         " Tabs are shown as ├──
-"set lcs+=trail:␣       " Show trailing spaces as ␣
+"set listchars=tab:▸\ ,eol:¬
 
 set textwidth=79
 set formatoptions+=t
@@ -97,7 +98,7 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-map q: :q
+noremap q: :q
 
 
 set fillchars+=stl:\ ,stlnc:\
@@ -109,6 +110,8 @@ if !exists("g:airline_symbols")
 endif
 "let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts=1
-let g:airline_theme="murmur"
+let g:airline_theme="badwolf"
 "let g:airline#extensions#tabline#enabled = 1
 
+let g:ycm_autoclose_preview_window_after_insertion=1
+colorscheme Tomorrow-Night-Eighties

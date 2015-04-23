@@ -39,6 +39,11 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Set make program to latexmk for .tex buffers
+if has("autocmd")
+    au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
+endif
+
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set ignorecase          " Do case insensitive matching
@@ -112,6 +117,8 @@ endif
 let g:airline_powerline_fonts=1
 let g:airline_theme="badwolf"
 "let g:airline#extensions#tabline#enabled = 1
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 let g:ycm_autoclose_preview_window_after_insertion=1
 colorscheme Tomorrow-Night-Eighties

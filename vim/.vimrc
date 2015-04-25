@@ -44,6 +44,15 @@ if has("autocmd")
     au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
 endif
 
+" Windows
+if has ('gui_running')
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+    set guifont=Lucida_Console:h10
+endif
+
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set ignorecase          " Do case insensitive matching

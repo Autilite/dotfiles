@@ -67,6 +67,12 @@ ${endif}
 {"full_text":"$else ${addr wlp2s0}","color":"\#FF3333","separator":false,"separator_block_width":6},\
 {"full_text":"${endif}"},\
 
+# Network desktop
+#{"full_text":"IP","color":"\#888888","separator":false,"separator_block_width":6},\
+#{"full_text":"${if_up wlp0s29f7u4} ${wireless_essid wlp0s29f7u4} ${addr wlp0s29f7u4} ${wireless_link_qual_perc wlp0s29f7u4}%","color":"\#AAF096","separator":false,"separator_block_width":6},\
+#{"full_text":"$else ${addr wlp0s29f7u4}","color":"\#FF3333","separator":false,"separator_block_width":6},\
+#{"full_text":"${endif}"},\
+
 # Download:
 ${if_up wlp2s0}
 {"full_text":"↓","color":"\#9470DB","separator":false,"separator_block_width":6},\

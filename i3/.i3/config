@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
+set $start Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -170,6 +171,7 @@ mode "apps" {
 		bindsym v exec vlc, mode "default"
 		bindsym t exec steam, mode "default"
 		bindsym e exec eclipse, mode "default"
+        bindsym i exec idea.sh, mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -237,7 +239,7 @@ bindsym XF86AudioPrev			exec cmus-remote --prev
 
 # Assign program to workspace
 assign [class="Firefox|Chromium"] 1
-assign [class="eclipse|Eclipse"] 2
+assign [class="eclipse|Eclipse|jetbrains-idea"] 2
 assign [class="Skype|skype"] 4
 assign [class="steam|Steam"] 6
 

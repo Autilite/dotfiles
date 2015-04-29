@@ -29,10 +29,6 @@ if has("syntax")
 	syntax on
 endif
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-set background=dark
-
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -66,8 +62,6 @@ set autowrite           " Automatically save before commands like :next and :mak
 "set hidden             " Hide buffers when they are abandoned
 "set mouse=a            " Enable mouse usage (all modes)
 set cursorline          " Highlight screen line of the cursor
-
-" Changes tabs to 4 spaces with smart autoindent
 set number
 set smartindent
 set softtabstop=4
@@ -76,32 +70,43 @@ set shiftwidth=4
 set expandtab
 "set list               " EOL, trailing spaces, tabs: show them.
 "set listchars=tab:▸\ ,eol:¬
-
 set textwidth=79
 set formatoptions+=t
-
 "set gdefault
 set clipboard+=unnamed
 set backspace =indent,eol,start " allow backspacing over everything in insert mode
 set laststatus=2
-set nojoinspaces		" Don't include an additional space after line join (J)
+set nojoinspaces
 set ruler
 set viminfo='20,\"50
-
 set scrolloff=5
 
 " Mappings
 let mapleader = "\<space>"
 map Y y$
+
 nnoremap j gj
 nnoremap k gk
 inoremap jj <esc>
 inoremap kk <esc>
-nnoremap ! :!
-nnoremap <CR> o<Esc>
 
-map <C-S-f> mzgg=G`zzz                  " format document
-" remove trailing whitespace and go back to previous place
+" Insert mode movement
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
+
+" Move lines
+nnoremap <silent> <C-k> :move-2<cr>
+nnoremap <silent> <C-j> :move+<cr>
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
+nnoremap <silent> <CR> o<Esc>
+
+nnoremap ! :!
+
+nnoremap <C-S-f> mzgg=G`zzz                  " format document
+" Trailing spaces
 nnoremap <silent> <leader>t mz:%s/\s\+$//e<CR>`z
 nnoremap <silent> <leader>T /\s\+$<CR>  " Show trailing whitespace
 nnoremap <silent> <C-l> :nohls<CR>
@@ -112,6 +117,7 @@ nmap <leader>y "+y
 map <leader><tab> gt
 nmap <leader>b :ls<CR>:b<Space>
 
+" Jump to last char inserted
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
@@ -134,4 +140,5 @@ let g:airline_theme="badwolf"
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 let g:ycm_autoclose_preview_window_after_insertion=1
+set background=dark
 colorscheme Tomorrow-Night-Eighties

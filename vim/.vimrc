@@ -19,25 +19,18 @@ if filereadable("/etc/vim/vimrc.local")
 	source /etc/vim/vimrc.local
 endif
 
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
 if has("autocmd")
+    " Load indentation rules and plugins according to the detected filetype.
 	filetype plugin indent on
+    " Jump to the last position when reopening a file
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    " Set make program to latexmk for .tex buffers
+    au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
+    let g:tex_flavor = 'latex'
 endif
 
 if has("syntax")
 	syntax on
-endif
-
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
-if has("autocmd")
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" Set make program to latexmk for .tex buffers
-if has("autocmd")
-    au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
 endif
 
 " Windows
@@ -137,8 +130,9 @@ let g:airline_powerline_fonts=1
 let g:airline_theme="badwolf"
 "let g:airline#extensions#tabline#enabled = 1
 
+" You Complete Me
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
 let g:ycm_autoclose_preview_window_after_insertion=1
+
 set background=dark
 colorscheme Tomorrow-Night-Eighties

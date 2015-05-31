@@ -1,6 +1,6 @@
 alias battery='upower -i $(upower -e | grep BAT)'
 alias vim='vimx'
-alias rm='echo "trashing: use \"\\\rm\" to rm."; trash -v'
+#alias rm='echo "trashing: use \"\\\rm\" to rm."; trash -v'
 
 # Configs
 alias realias='vim ~/.oh-my-zsh/custom/alias.zsh; source ~/.oh-my-zsh/custom/alias.zsh'

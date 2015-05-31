@@ -28,6 +28,7 @@ if has("autocmd")
     au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
     let g:tex_flavor = 'latex'
     au Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+    au Filetype css setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
@@ -108,7 +109,7 @@ nnoremap <silent> <C-l> :nohls<CR>
 
 nmap <leader>p "+p
 nmap <leader>P "+P
-nmap <leader>y "+y
+vmap <leader>y "+y
 map <leader><tab> gt
 nmap <leader>b :ls<CR>:b<Space>
 

@@ -5,6 +5,6 @@ function cd {
 }
 
 # restore last saved path
-if [ -f ~/.last_dir ]
-    then cd `cat ~/.last_dir`
-fi
+#if [ -f ~/.last_dir ]
+#    then cd `cat ~/.last_dir`
+#fi

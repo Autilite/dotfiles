@@ -1,5 +1,4 @@
 alias battery='upower -i $(upower -e | grep BAT)'
-alias vim='vimx'
 #alias rm='echo "trashing: use \"\\\rm\" to rm."; trash -v'
 
 # Configs

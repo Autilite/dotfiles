@@ -249,7 +249,7 @@ assign [class="(?i)steam"] 6
 # Startup 
 #exec --no-startup-id nm-applet					# network manager
 #exec --no-startup-id gnome-sound-applet			# sound applet
-exec --no-startup-id pnmixer                    # sound applet
-exec --no-startup-id redshift
-exec --no-startup-id /usr/libexec/gnome-settings-daemon		# Settings service
+#exec --no-startup-id pnmixer                    # sound applet
+#exec --no-startup-id redshift
+#exec --no-startup-id /usr/libexec/gnome-settings-daemon		# Settings service
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg

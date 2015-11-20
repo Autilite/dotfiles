@@ -225,7 +225,7 @@ hide_edge_borders both
 
 # Hotkeys
 #bindsym Print 					exec --no-startup-id gnome-screenshot
-bindsym Print                   exec scrot 'Screenshot-%Y-%m-%d-%H%M%S.png' -e 'mv $f ~/Pictures/'
+bindsym Print                   exec scrot $HOME/Pictures/Screenshots/'Screenshot-%Y-%m-%d-%H%M%S.png'
 bindsym $mod+Ctrl+Delete		exec gnome-system-monitor
 
 # Media keys

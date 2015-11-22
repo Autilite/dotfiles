@@ -1,0 +1,18 @@
+" match dark theme for CmdLine
+highlight CmdLine background: #191919; color: #afafaf; transition: all 0.25s; font-size: 9pt;
+
+" tab operation
+noremap <C-h> gT
+noremap <C-l> gt
+
+" completion priority
+set complete=bsl
+
+" use homerow for hints
+set hintchars=hjklasdf
+
+" open addons, downloads, extoptions, help, javascript, prefs in new tab
+set newtab=all
+
+" scrolling for <C-d> and <C-u>
+set scroll=10

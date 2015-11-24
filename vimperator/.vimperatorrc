@@ -1,12 +1,18 @@
 " match dark theme for CmdLine
 highlight CmdLine background: #191919; color: #afafaf; transition: all 0.25s; font-size: 9pt;
 
+" set Hint font size
+highlight Hint font-family: monospace; font-size: 20px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+
 " tab operation
 noremap <C-h> gT
 noremap <C-l> gt
 
 " completion priority
 set complete=bsl
+
+" show only tabs
+set gui=none,tabs
 
 " use homerow for hints
 set hintchars=hjklasdf

@@ -8,3 +8,7 @@
 #if [ -f ~/.last_dir ]
 #    then cd `cat ~/.last_dir`
 #fi
+function mkdircd () {
+    mkdir -p $@
+    eval cd "\"\$$#\""
+}

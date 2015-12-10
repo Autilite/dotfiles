@@ -10,10 +10,6 @@ Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
-if $COLORTERM == 'gnome-terminal'
-	set t_Co=256
-endif
-
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
 	source /etc/vim/vimrc.local
@@ -119,7 +115,6 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 noremap q: :q
-
 
 set fillchars+=stl:\ ,stlnc:\
 let g:netrw_liststyle=3

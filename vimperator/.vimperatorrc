@@ -21,4 +21,4 @@ set hintchars=hjklasdf
 set newtab=all
 
 " scrolling for <C-d> and <C-u>
-set scroll=10
+set scroll=20

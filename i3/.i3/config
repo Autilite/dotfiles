@@ -224,8 +224,7 @@ client.urgent           #2f343a #8c644c #888888 #900000
 hide_edge_borders both
 
 # Hotkeys
-#bindsym Print 					exec --no-startup-id gnome-screenshot
-bindsym Print                   exec scrot $HOME/Pictures/Screenshots/'Screenshot-%Y-%m-%d-%H%M%S.png'
+bindsym Print                   exec --no-startup-id scrot $HOME/Pictures/Screenshots/'Screenshot-%Y-%m-%d-%H%M%S.png' -e 'notify-send "scrot" "Screenshot saved as $n"'
 bindsym $mod+Ctrl+Delete		exec gnome-system-monitor
 
 # Media keys

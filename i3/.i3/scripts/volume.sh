@@ -1,11 +1,11 @@
 #!/bin/sh
 MUTE=$(amixer get Master | grep Left: | cut -d " " -f8 )
 VOLUME=$(amixer get Master | grep Left: | cut -d " " -f7 | tr -d '[%]')
-if [ $MUTE == "[off]" ]
+if [ $MUTE == "[off]" ] || [ $VOLUME == 0 ]
 then
     echo ""
 else
-    if [ $VOLUME > 50 ]
+    if [ $VOLUME -ge 50 ]
     then
         echo $VOLUME"% "
     else

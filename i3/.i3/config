@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 
 # application launcher
 set $bg-color #2f343f
-bindsym $mod+d exec rofi -show run -bg "$bg-color" -fg "#ffffff" -hlbg "$bg-color" -hlfg "#1974d2" -font "Terminus 12"
+bindsym $mod+d exec rofi -show run -bg "$bg-color" -fg "#ffffff" -hlbg "$bg-color" -hlfg "#1974d2" -font "Terminus 16" -lines 10
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -244,7 +244,7 @@ assign [class="(?i)thunderbird"] 5
 assign [class="(?i)steam"] 6
 
 # Startup 
-exec --no-startup-id compton --config ~/.compton.conf -b
+exec --no-startup-id compton
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 #exec --no-startup-id nm-applet					# network manager
 #exec --no-startup-id gnome-sound-applet			# sound applet

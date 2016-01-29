@@ -2,8 +2,6 @@
 call plug#begin()
 
 Plug 'flazz/vim-colorschemes'
-Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'fatih/vim-go'
 
@@ -132,30 +130,6 @@ noremap q: :q
 
 set fillchars+=stl:\ ,stlnc:\
 let g:netrw_liststyle=3
-
-" Airline status bar
-if !exists("g:airline_symbols")
-	let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-"let g:airline_symbols.space = "\ua0"
-let g:airline_powerline_fonts=1
-let g:airline_theme="badwolf"
-"let g:airline#extensions#tabline#enabled = 1
 
 " You Complete Me
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"

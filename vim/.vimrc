@@ -1,12 +1,11 @@
 " vim-plug
 call plug#begin()
 
-Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
 Plug 'Valloric/YouCompleteMe'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -26,6 +25,7 @@ if has("autocmd")
     au Filetype html setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype css setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+    au Filetype tex setlocal makeprg=latexmk\ -pdf\ -%
 endif
 
 if has("syntax")
@@ -44,6 +44,8 @@ if has ('gui_running')
     set guioptions-=L  "remove left-hand scroll bar
     set guifont=Lucida_Console:h10
 endif
+
+set spelllang=en_ca
 
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
@@ -73,8 +75,21 @@ set ruler
 set viminfo='20,\"50
 set scrolloff=5
 
+set foldmethod=indent
+
 " Mappings
 let mapleader = "\<space>"
+
+map <F1> mz:%s/\s\+$//e<CR>`z           " Remove trailing whitespace
+" Toggle spellcheck
+" NTS: cursor on word
+"   z= will suggest correction
+"   zg add to dictionary
+"   zw mark word as incorrect
+map <F2> :setlocal spell!<CR>
+map <silent> <leader>T /\s\+$<CR>       " Show trailing whitespace
+map <F6> :!xdg-open <cfile><CR><CR>     " Open file or URL under cursor
+
 map Y y$
 
 nnoremap j gj
@@ -100,7 +115,6 @@ nnoremap ! :!
 nnoremap <C-S-f> mzgg=G`zzz                  " format document
 " Trailing spaces
 nnoremap <silent> <leader>t mz:%s/\s\+$//e<CR>`z
-nnoremap <silent> <leader>T /\s\+$<CR>  " Show trailing whitespace
 nnoremap <silent> <C-l> :nohls<CR>
 
 nmap <leader>p "+p
@@ -148,4 +162,4 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_insertion=1
 
 set background=dark
-colorscheme badwolf
+colorscheme Tomorrow-Night-Eighties

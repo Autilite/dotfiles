@@ -1,7 +1,7 @@
 out_to_x no
 out_to_console yes
 short_units yes
-update_interval 5
+update_interval 10
 if_up_strictness address
 
 TEXT
@@ -17,9 +17,9 @@ TEXT
 
 # Battery:
 {"full_text":"BATTERY","color":"\#888888","separator":false,"separator_block_width":6},\
-{"full_text":"${if_match ${battery_percent}>75}${battery_percent}% ${battery_time}","color":"\#AAF096","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${battery_percent}>65}${battery_percent}% ${battery_time}","color":"\#AAF096","separator":false,"separator_block_width":6},\
 {"full_text":"${else}"},\
-{"full_text":"${if_match ${battery_percent}>50}${battery_percent}% ${battery_time}","color":"\#F0DC64","separator":false,"separator_block_width":6},\
+{"full_text":"${if_match ${battery_percent}>45}${battery_percent}% ${battery_time}","color":"\#F0DC64","separator":false,"separator_block_width":6},\
 {"full_text":"${else}"},\
 {"full_text":"${if_match ${battery_percent}>25}${battery_percent}% ${battery_time}","color":"\#FF9933","separator":false,"separator_block_width":6},\
 {"full_text":"${else}"},\

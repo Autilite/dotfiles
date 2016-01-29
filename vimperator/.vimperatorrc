@@ -21,4 +21,6 @@ set hintchars=hjklasdf
 set newtab=all
 
 " scrolling for <C-d> and <C-u>
-set scroll=20
+"set scroll=20
+
+ignorekeys add docs.google.com

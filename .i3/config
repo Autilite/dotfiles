@@ -26,7 +26,7 @@ font pango:PF Arma Five 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $start+Return exec i3-sensible-terminal
+bindsym $start+Return exec urxvt256c
 #bindsym $start+Return exec gnome-terminal --hide-menubar
 
 # kill focused window
@@ -249,5 +249,5 @@ exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 #exec --no-startup-id nm-applet					# network manager
 #exec --no-startup-id gnome-sound-applet			# sound applet
 #exec --no-startup-id pnmixer                    # sound applet
-#exec --no-startup-id redshift
-#exec --no-startup-id /usr/libexec/gnome-settings-daemon		# Settings service
+exec --no-startup-id redshift
+exec --no-startup-id /usr/libexec/gnome-settings-daemon		# Settings service

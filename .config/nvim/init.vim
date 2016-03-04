@@ -4,20 +4,14 @@ call plug#begin()
 Plug 'flazz/vim-colorschemes'
 Plug 'Valloric/YouCompleteMe'
 Plug 'fatih/vim-go'
-Plug 'SirVer/ultisnips'
 
 call plug#end()
 
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-    source /etc/vim/vimrc.local
-endif
-
 if has("autocmd")
     " Load indentation rules and plugins according to the detected filetype.
-    filetype plugin indent on
+	filetype plugin indent on
     " Jump to the last position when reopening a file
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
     " Set make program to latexmk for .tex buffers
     au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
     let g:tex_flavor = 'latex'
@@ -28,7 +22,7 @@ if has("autocmd")
 endif
 
 if has("syntax")
-    syntax on
+	syntax on
 endif
 
 " Windows
@@ -68,13 +62,11 @@ set textwidth=79
 set clipboard+=unnamed
 set backspace =indent,eol,start " allow backspacing over everything in insert mode
 set laststatus=2        " Always show status line
-set formatoptions+=j    " Delete comment char when joining lines
 set nojoinspaces
 set ruler               " Show Line/Col/% in status line
 set viminfo='20,\"50
 set fillchars+=stl:\ ,stlnc:\
 set scrolloff=5
-set wildmenu
 
 set foldmethod=indent
 
@@ -82,7 +74,6 @@ let mapleader = "\<space>"
 
 "=============== Function keys ===================
 map <F1> mz:%s/\s\+$//e<CR>`z           " Remove trailing whitespace
-nnoremap <silent> <leader>T /\s\+$<CR>  " Show trailing whitespace
 " Toggle spellcheck
 " NTS: cursor on word
 "   z= will suggest correction
@@ -99,16 +90,16 @@ nnoremap j gj
 nnoremap k gk
 
 " Insert mode movement
-"inoremap <C-h> <C-o>h
-"inoremap <C-j> <C-o>j
-"inoremap <C-k> <C-o>k
-"inoremap <C-l> <C-o>l
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
 
 " Move lines
-"nnoremap <silent> <C-k> :move-2<cr>
-"nnoremap <silent> <C-j> :move+<cr>
-"nnoremap <silent> <C-h> <<
-"nnoremap <silent> <C-l> >>
+nnoremap <silent> <C-k> :move-2<cr>
+nnoremap <silent> <C-j> :move+<cr>
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
 nnoremap <silent> <CR> o<Esc>
 
 " Navigate Windows
@@ -141,12 +132,29 @@ nnoremap <silent> p p`]
 inoremap jj <esc>
 inoremap kk <esc>
 
-nnoremap <C-S-f> mzgg=G`zzz         " format document
+nnoremap <C-S-f> mzgg=G`zzz                  " format document
+
+" Trailing spaces
+nnoremap <silent> <leader>t mz:%s/\s\+$//e<CR>`z
+nnoremap <silent> <leader>T /\s\+$<CR>       " Show trailing whitespace
 
 map <leader><tab> gt
 nnoremap <silent> <C-n> :bnext<CR>
 nnoremap <silent> <C-p> :bprevious<CR>
-nmap <leader>b :ls<CR>:b<Space>     " List open buffers
+nmap <leader>b :ls<CR>:b<Space>
+
+"=================================================
+
+"=============== Terminal bindings ===============
+tnoremap <Esc> <C-\><C-n>
+
+command STerminal call STerminal()
+
+function! STerminal()
+    belowright split
+    terminal
+    resize 5
+endfunction
 
 "=================================================
 
@@ -154,10 +162,6 @@ let g:netrw_liststyle=3
 
 let g:ycm_global_ycm_extra_conf = "$HOME/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_insertion=1
-
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 set background=dark
 colorscheme Tomorrow-Night-Eighties

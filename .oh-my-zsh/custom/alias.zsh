@@ -10,3 +10,5 @@ alias i3config='$EDITOR ~/.i3/config'
 # UBC ssh
 alias s8u8-sftp='sftp s8u8@remote.ugrad.cs.ubc.ca'
 alias s8u8-ssh='ssh s8u8@remote.ugrad.cs.ubc.ca'
+
+alias 319='ssh kelvin@162.243.112.174'

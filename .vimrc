@@ -76,7 +76,7 @@ set fillchars+=stl:\ ,stlnc:\
 set scrolloff=5
 set wildmenu
 
-set foldmethod=indent
+"set foldmethod=indent
 
 let mapleader = "\<space>"
 

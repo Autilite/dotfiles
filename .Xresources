@@ -14,9 +14,9 @@
 
 ! Select the fonts to be used. This is a comma separated list of font
 !URxvt*font: xft:bitstream vera sans mono:size=10:antialias=true
-URxvt.font: xft:monofur:size=10:antialias=false
+URxvt.font: xft:hack:size=10:antialias=true
 ! font letter spacing
-URxvt.letterSpace: -4
+!URxvt.letterSpace: -4
 !URxvt.boldFont: xft:bitstream vera sans mono:bold:size=10:antialias=true
 
 URxvt.scrollBar: false
@@ -53,7 +53,6 @@ URxvt.scrollBar: false
 ! Cyan (Aqua) + Bright Cyan
 *.color6:       t_aqua
 *.color14:      #54ced6
-
 
 ! Light Grey (Selection) + White (Current Line)
 *.color7:       t_selection

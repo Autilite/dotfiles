@@ -1,6 +1,6 @@
 #!/bin/sh
-MUTE=$(amixer get Master | grep Left: | cut -d " " -f8 )
-VOLUME=$(amixer get Master | grep Left: | cut -d " " -f7 | tr -d '[%]')
+MUTE=$(amixer get Master | grep Mono: | cut -d " " -f8 )
+VOLUME=$(amixer get Master | grep Mono: | cut -d " " -f6 | tr -d '[%]')
 if [ $MUTE == "[off]" ] || [ $VOLUME == 0 ]
 then
     echo ""

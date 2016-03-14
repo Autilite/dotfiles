@@ -24,3 +24,5 @@ set newtab=all
 "set scroll=20
 
 ignorekeys add docs.google.com
+
+set defsearch=startpage

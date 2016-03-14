@@ -10,7 +10,6 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
-set $start Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -19,15 +18,13 @@ set $start Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-
-font pango:PF Arma Five 9
+font pango:Source Code Pro Semibold, FontAwesome Regular 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $start+Return exec urxvt256c
-#bindsym $start+Return exec gnome-terminal --hide-menubar
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -181,12 +178,11 @@ mode "apps" {
 } 
 bindsym $mod+p mode "apps"
 
-mode  "(s)uspend (h)ibernate (p)owersave (r)estart shut(d)own (l)ogout" {
-        bindsym s exec sudo pm-suspend; mode "default"
-        bindsym h exec sudo pm-hibernate; mode "default"
-        bindsym p exec sudo pm-powersave; mode "default"
-        bindsym d exec sudo shutdown -h 0; mode "default"
-        bindsym r exec sudo shutdown -r 0; mode "default"
+mode  "(s)uspend (h)ibernate (r)estart shut(d)own (l)ogout" {
+        bindsym s exec systemctl suspend; mode "default"
+        bindsym h exec systemctl hibernate; mode "default"
+        bindsym d exec systemctl poweroff; mode "default"
+        bindsym r exec systemctl reboot; mode "default"
         bindsym l exec i3-msg exit; mode "default"
 
         bindsym Return mode "default"
@@ -194,7 +190,7 @@ mode  "(s)uspend (h)ibernate (p)owersave (r)estart shut(d)own (l)ogout" {
         bindsym q mode "default"
         bindcode Control+34 mode "default"
 }
-bindsym $mod+Pause mode "(s)uspend (h)ibernate (p)owersave (r)estart shut(d)own (l)ogout"
+bindsym $mod+Pause mode "(s)uspend (h)ibernate (r)estart shut(d)own (l)ogout"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -204,12 +200,12 @@ bar {
 		position top
 
 		colors {
-				background #222222
+				background #282b34
 				statusline #c0c0c0
 #				class 				border 	backgrd text
-				focused_workspace 	#292929 #222222 #ffffff
-				active_workspace	#292929 #222222 #a5a5a5
-				inactive_workspace 	#161616 #161616 #a5a5a5
+				focused_workspace 	#777777 #444444 #ffffff
+				active_workspace	#292929 #282b34 #a5a5a5
+				inactive_workspace 	#282b34 #282b34 #a5a5a5
 				#urgent_workspace 	#161616 #161616 #a5a5a5
 		}
 }
@@ -221,13 +217,12 @@ client.unfocused        #222323 #222323 #888888 #292d2e
 client.urgent           #2f343a #8c644c #888888 #900000
 
 # Hotkeys
-bindsym Print                   exec --no-startup-id scrot $HOME/Pictures/Screenshots/'Screenshot-%Y-%m-%d-%H%M%S.png' -e 'notify-send "scrot" "Screenshot saved as $n"'
-bindsym $mod+Ctrl+Delete		exec gnome-system-monitor
+bindsym Print                   exec --no-startup-id scrot ~/Pictures/Screenshots/'Screenshot-%Y-%m-%d-%H%M%S.png' -e 'notify-send "scrot" "Screenshot saved as $n"'
 
 # Media keys
 bindsym XF86AudioRaiseVolume 	exec amixer -q set Master 3%+ unmute
 bindsym XF86AudioLowerVolume 	exec amixer -q set Master 1%- unmute
-bindsym XF86AudioMute 			exec amixer -D pulse set Master toggle
+bindsym XF86AudioMute 			exec amixer -q set Master toggle
 bindsym XF86MonBrightnessDown 	exec xbacklight -dec 5 
 bindsym XF86MonBrightnessUp 	exec xbacklight -inc 5
 
@@ -241,13 +236,9 @@ assign [class="Firefox|Chromium"] 1
 assign [class="(?i)eclipse|jetbrains"] 2
 assign [class="(?i)skype"] 4
 assign [class="(?i)thunderbird"] 5
-assign [class="(?i)steam"] 6
 
 # Startup 
 exec --no-startup-id compton
+exec --no-startup-id dunst
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-#exec --no-startup-id nm-applet					# network manager
-#exec --no-startup-id gnome-sound-applet			# sound applet
-#exec --no-startup-id pnmixer                    # sound applet
 exec --no-startup-id redshift
-exec --no-startup-id /usr/libexec/gnome-settings-daemon		# Settings service

@@ -24,6 +24,7 @@ if has("autocmd")
     au Filetype html setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype css setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+    au Filetype sh setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype tex setlocal makeprg=latexmk\ -pdf\ -%
 endif
 

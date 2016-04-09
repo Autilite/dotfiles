@@ -2,9 +2,11 @@
 call plug#begin()
 
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'Valloric/YouCompleteMe'
-Plug 'fatih/vim-go'
-Plug 'SirVer/ultisnips'
+Plug 'fatih/vim-go', { 'for': 'go' }
+"Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -18,13 +20,12 @@ if has("autocmd")
     filetype plugin indent on
     " Jump to the last position when reopening a file
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-    " Set make program to latexmk for .tex buffers
-    au BufReadPost *.tex setl mp=latexmk\ -pdf\ %
-    let g:tex_flavor = 'latex'
     au Filetype html setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype css setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
     au Filetype sh setlocal ts=2 sts=2 sw=2 expandtab
+
+    let g:tex_flavor = 'latex'
     au Filetype tex setlocal makeprg=latexmk\ -pdf\ -%
 endif
 
@@ -147,7 +148,8 @@ nnoremap <C-S-f> mzgg=G`zzz         " format document
 map <leader><tab> gt
 nnoremap <silent> <C-n> :bnext<CR>
 nnoremap <silent> <C-p> :bprevious<CR>
-nmap <leader>b :ls<CR>:b<Space>     " List open buffers
+" List and select open buffer
+nmap <leader>b :ls<CR>:b<Space>
 
 "=================================================
 
@@ -155,10 +157,11 @@ let g:netrw_liststyle=3
 
 let g:ycm_global_ycm_extra_conf = "$HOME/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_server_python_interpreter="/usr/bin/python"
 
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 set background=dark
 colorscheme Tomorrow-Night-Eighties

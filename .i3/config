@@ -241,6 +241,7 @@ bindsym XF86AudioPrev			exec cmus-remote --prev
 assign [class="Firefox|Chromium"] 1
 assign [class="(?i)eclipse|jetbrains"] 2
 assign [class="(?i)skype"] 4
+assign [class="(?i)slack"] 4
 assign [class="(?i)thunderbird"] 5
 
 # Startup 

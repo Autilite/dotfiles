@@ -30,8 +30,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # application launcher
-set $bg-color #2f343f
-bindsym $mod+d exec rofi -show run -width 100 -padding 410 -opacity 80 -hide-scrollbar -bg "$bg-color" -fg "#ffffff" -bc "$bg-color" -hlbg "$bg-color" -hlfg "#f99157" -font "hack 16" -lines 8
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

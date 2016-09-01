@@ -1,0 +1,42 @@
+let homedirectory = '/home/kelvin'
+let configpath = '~/.cvimrc'
+set localconfig
+
+" Settings
+set noautofocus
+set smoothscroll
+let scrollduration = 350
+let zoomfactor = 0.05
+set typelinkhints
+let searchlimit = 15
+let scrollstep = 85
+let barposition = "top"
+let hintcharacters = "hjklasdf"
+let searchengine startpage = "https://www.startpage.com/do/dsearch?q="
+let searchengine reddit = "https://www.startpage.com/do/dsearch?q=site%3Areddit.com%20%s"
+let searchalias r = "reddit"
+let completionengines = ["amazon", "reddit", "startpage", "wikipedia", "github"]
+let defaultengine = "startpage"
+
+let blacklists = ["https://mail.google.com/*","*://mail.google.com/*","@https://mail.google.com/mail/*"]
+" blacklists prefixed by '@' act as a whitelist
+
+let @@r = "https://www.reddit.com/r"
+
+let mapleader = "<Space>"
+" Mappings
+map <Leader>r reloadTabUncached
+map <Leader>x :restore<Space>
+
+map gb :buffer<Space>
+map <C-u> scrollPageUp
+map <C-d> scrollPageDown
+
+map <C-p> gT
+map <C-n> gt
+
+map $ lastTab
+map 0 firstTab
+map g0 scrollToLeft
+map g$ scrollToRight
+

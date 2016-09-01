@@ -180,7 +180,8 @@ mode "apps" {
 } 
 bindsym $mod+p mode "apps"
 
-set $locker i3lock -i ~/Pictures/wallpaper.png && sleep 1
+set $locker i3lock-blur && sleep 1
+bindsym Mod4+l exec --no-startup-id $locker
 set $mode_system "(s)uspend (h)ibernate (r)estart shut(d)own (e) logout (l)ock" 
 mode $mode_system {
         bindsym s exec --no-startup-id $locker && systemctl suspend; mode "default"
@@ -239,13 +240,13 @@ bindsym XF86AudioPrev			exec cmus-remote --prev
 # Assign program to workspace
 assign [class="Firefox|Chromium"] 1
 assign [class="(?i)eclipse|jetbrains"] 2
-assign [class="(?i)skype"] 4
+assign [class="(?i)skype|whatsie"] 4
 assign [class="(?i)slack"] 4
 assign [class="(?i)thunderbird"] 5
 
 # Startup 
 exec --no-startup-id compton
 exec --no-startup-id dunst
-exec --no-startup-id xss-lock -- i3lock -i ~/Pictures/wallpaper.png
+exec --no-startup-id xautolock -time 15 -locker i3lock-blur
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id redshift

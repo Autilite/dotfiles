@@ -1,11 +1,12 @@
 " vim-plug
 call plug#begin()
 
-Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
 "Plug 'SirVer/ultisnips'
 
 call plug#end()
@@ -162,6 +163,16 @@ let g:ycm_server_python_interpreter="/usr/bin/python"
 " let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:UltiSnipsJumpForwardTrigger="<c-j>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+let g:gitgutter_diff_args = '-w'
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = ':'
+let g:gitgutter_max_signs = 1500
 
 set background=dark
 colorscheme Tomorrow-Night-Eighties

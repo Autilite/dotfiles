@@ -6,7 +6,9 @@ highlight Hint font-family: monospace; font-size: 20px; font-weight: bold; text-
 
 " tab operation
 noremap <C-h> gT
+noremap J gT
 noremap <C-l> gt
+noremap K gt
 
 " completion priority
 set complete=bsl
@@ -22,6 +24,9 @@ set newtab=all
 
 " scrolling for <C-d> and <C-u>
 "set scroll=20
+
+noremap j 5j
+noremap k 5k
 
 ignorekeys add docs.google.com
 

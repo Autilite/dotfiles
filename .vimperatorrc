@@ -1,11 +1,9 @@
-" match dark theme for CmdLine
-highlight CmdLine background: #191919; color: #afafaf; transition: all 0.25s; font-size: 9pt;
-
 " show status bar
 set status=input,location,bookmark,ssl
 
 " set Hint font size
-highlight Hint font-family: monospace; font-size: 20px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+"highlight Hint font-family: monospace; font-size: 20px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+colorscheme fxdevtools-dark
 
 " tab operation
 noremap <C-h> gT
@@ -41,6 +39,7 @@ noremap j 5j
 noremap k 5k
 
 ignorekeys add docs.google.com
+ignorekeys add reddit.com -except H,L,o,O,t,T,f,F,g,G,gi,gu,gU,r,R,:,/,?,<C-p>,<C-n>
 
 set defsearch=startpage
 cabbrev tgs tabgroups switch

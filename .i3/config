@@ -201,21 +201,21 @@ bindsym $mod+Pause mode $mode_system
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-		status_command ~/.i3/conky-wrapper
-#		status_command i3status -c ~/.i3/i3status.conf
-		position top
-
-		colors {
-				background #282b34
-				statusline #c0c0c0
-#				class 				border 	backgrd text
-				focused_workspace 	#777777 #444444 #ffffff
-				active_workspace	#292929 #282b34 #a5a5a5
-				inactive_workspace 	#282b34 #282b34 #a5a5a5
-				#urgent_workspace 	#161616 #161616 #a5a5a5
-		}
-}
+#bar {
+#		status_command ~/.i3/conky-wrapper
+##		status_command i3status -c ~/.i3/i3status.conf
+#		position top
+#
+#		colors {
+#				background #282b34
+#				statusline #c0c0c0
+##				class 				border 	backgrd text
+#				focused_workspace 	#777777 #444444 #ffffff
+#				active_workspace	#292929 #282b34 #a5a5a5
+#				inactive_workspace 	#282b34 #282b34 #a5a5a5
+#				#urgent_workspace 	#161616 #161616 #a5a5a5
+#		}
+#}
 
 # Window colors         border  backgr. text    indicator
 client.focused          #222323 #d3212d #888888 #444444
@@ -252,3 +252,4 @@ exec --no-startup-id xautolock -time 15 -locker i3lock-blur
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id redshift
 exec --no-startup-id dropbox
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

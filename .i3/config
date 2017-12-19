@@ -225,6 +225,7 @@ client.urgent           #2f343a #8c644c #888888 #900000
 
 # Hotkeys
 bindsym Print                   exec --no-startup-id scrot ~/Pictures/Screenshots/'Screenshot-%Y-%m-%d-%H%M%S.png' -e 'notify-send "scrot" "Screenshot saved as $n"'
+bindsym --release $start+Shift+Print   exec --no-startup-id scrot -s ~/Pictures/Screenshots/'Snippet-%Y-%m-%d-%H%M%S.png' -e 'notify-send "scrot" "Snippet screenshot saved as $n"'
 
 # Media keys
 bindsym XF86AudioRaiseVolume 	exec amixer -q set Master 3%+ unmute

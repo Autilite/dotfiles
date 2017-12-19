@@ -241,9 +241,9 @@ bindsym XF86AudioPrev			exec cmus-remote --prev
 # Assign program to workspace
 assign [class="Firefox|Chromium"] 1
 assign [class="(?i)eclipse|jetbrains"] 2
-assign [class="(?i)skype|whatsie"] 4
+assign [class="(?i)discord|whatsie"] 4
 assign [class="(?i)slack"] 4
-assign [class="(?i)thunderbird"] 5
+assign [class="(?i)thunderbird|quiterss"] 5
 
 # Startup 
 exec --no-startup-id compton
@@ -251,5 +251,4 @@ exec --no-startup-id dunst
 exec --no-startup-id xautolock -time 15 -locker i3lock-blur
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id redshift
-exec --no-startup-id dropbox
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

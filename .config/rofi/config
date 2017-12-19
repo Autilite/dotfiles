@@ -9,7 +9,7 @@ rofi.color-urgent: #2f343f, #dc322f, #2f343f, #dc322f, #fdf6e3
 
 rofi.font:                          hack 16
 rofi.width:                         100
-rofi.padding:                       300
+rofi.padding:                       450
 rofi.opacity:                       80
 rofi.lines:                         8
 rofi.separator-style:               none

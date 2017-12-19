@@ -42,7 +42,7 @@ alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙──�
 alias battery='upower -i $(upower -e | grep BAT)'
 
 # Configs
-alias realias='$EDITOR ~/.oh-my-zsh/custom/alias.zsh; source ~/.oh-my-zsh/custom/alias.zsh'
+alias realias='$EDITOR ~/.zsh/alias.zsh; source ~/.zsh/alias.zsh'
 alias vimrc='$EDITOR ~/.vimrc'
 alias nvimrc='$EDITOR ~/.config/nvim/init.vim'
 alias i3config='$EDITOR ~/.i3/config'

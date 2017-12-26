@@ -181,7 +181,7 @@ mode "apps" {
 } 
 bindsym $mod+p mode "apps"
 
-set $locker i3lock-blur && sleep 1
+set $locker $HOME/.i3/scripts/i3lock-blur.sh && sleep 1
 bindsym Mod4+l exec --no-startup-id $locker
 set $mode_system "(s)uspend (h)ibernate (r)estart shut(d)own (e) logout (l)ock" 
 mode $mode_system {

@@ -18,7 +18,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/topbar]
+[bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -29,7 +29,9 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+bottom = true
+
+line-size = 0
 line-color = #f00
 
 border-size = 0
@@ -38,19 +40,20 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
-font-0 = pango:Source Code Pro:size=8;0
-font-1 = FontAwesome:size=9;0
+font-0 = pango:Source Code Pro:size=9;2
+font-1 = FontAwesome5Free:style=Solid:size=9;2
+font-2 = FontAwesome5Brands:style=:solid:size=9;2
 
-modules-left = bspwm i3 xwindow
+modules-left = i3
 modules-center = date
 modules-right = xbacklight volume wlan wlan-2 eth battery
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
+#tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -202,10 +205,11 @@ label = %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlp2s0
-interval = 3.0
+interval = 10.0
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = ""
+format-connected-prefix-padding = 2
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -225,10 +229,11 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/wlan-2]
 type = internal/network
 interface = wlp32s0
-interval = 3.0
+interval = 10.0
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = ""
+format-connected-prefix-padding = 2
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
@@ -248,7 +253,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = enp3s0
-interval = 3.0
+interval = 10.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -263,7 +268,7 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 10
 
 date = %a %b %d,
 date-alt = " %Y-%m-%d"
@@ -271,7 +276,7 @@ date-alt = " %Y-%m-%d"
 time = %l:%M %p
 time-alt = %H:%M:%S
 
-format-prefix = 
+;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -280,19 +285,20 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume> <bar-volume>
-label-volume = VOL
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 ramp-volume-0 =
 ramp-volume-1 =
 ramp-volume-2 =
 ramp-volume-3 =
+ramp-volume-padding = 2
 ramp-volume-foreground = #fff
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

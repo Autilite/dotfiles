@@ -12,6 +12,7 @@ zstyle :compinstall filename '/home/kelvin/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+setopt histignorespace
 
 for config (~/.zsh/*.zsh) source $config
 
@@ -22,3 +23,7 @@ autoload -Uz colors && colors
 
 PROMPT="%{$fg[green]%}%M%{$reset_color%} %~ » "
 PATH=$PATH:~/bin:~/scripts
+
+function chpwd() {
+  ls -v --color=auto
+}

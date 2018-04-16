@@ -41,6 +41,8 @@ alias gss="git status -s"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 alias battery='upower -i $(upower -e | grep BAT)'
 
+alias open='xdg-open'
+
 # Configs
 alias realias='$EDITOR ~/.zsh/alias.zsh; source ~/.zsh/alias.zsh'
 alias vimrc='$EDITOR ~/.vimrc'
